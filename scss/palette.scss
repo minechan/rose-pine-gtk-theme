@@ -1,0 +1,59 @@
+// Rosé Pine Dawnの色
+$rose-pine-base          : #faf4ed;
+$rose-pine-surface       : #fffaf3;
+$rose-pine-overlay       : #f2e9e1;
+$rose-pine-muted         : #9893a5;
+$rose-pine-subtle        : #797593;
+$rose-pine-text          : #575279;
+$rose-pine-love          : #b4637a;
+$rose-pine-gold          : #ea9d34;
+$rose-pine-rose          : #d7827e;
+$rose-pine-pine          : #286983;
+$rose-pine-foam          : #56949f;
+$rose-pine-iris          : #907aa9;
+$rose-pine-highlight-low : #f4ede8;
+$rose-pine-highlight-med : #dfdad9;
+$rose-pine-highlight-high: #cecacd;
+
+// 全般
+$general-accent                  : $rose-pine-foam;
+$general-fg                      : $rose-pine-text;
+$general-fg-backdrop             : $rose-pine-subtle;
+$general-fg-disabled             : $rose-pine-muted;
+$general-fg-link                 : $rose-pine-iris;
+$general-selection-bg            : $rose-pine-highlight-med;
+$general-caret-color             : $rose-pine-highlight-high;
+$general-border-color            : $rose-pine-highlight-high;
+$general-border-color-insensitive: $rose-pine-highlight-med;
+$general-shadow-color            : rgba(black, 0.0625);
+$general-shadow-color-insensitive: rgba(black, 0.03125);
+
+// ウィンドウ
+$window-bg          : $rose-pine-base;
+$window-border-color: rgba(black, 0.5);
+
+// タイトルバー
+$titlebar-fg         : $rose-pine-surface;
+$titlebar-fg-backdrop: $rose-pine-subtle;
+$titlebar-bg         : $rose-pine-rose;
+$titlebar-bg-backdrop: $rose-pine-base;
+
+// フレーム
+$frame-bg         : $rose-pine-surface;
+$frame-bg-backdrop: $rose-pine-base;
+
+// ビュー
+$view-rubberband-bg          : rgba($general-selection-bg, 0.25);
+$view-rubberband-border-color: rgba($general-border-color, 0.25);
+
+// メニューバー, 
+$menubar-toolbar-bg         : $rose-pine-overlay;
+$menubar-toolbar-bg-backdrop: $rose-pine-base;
+
+// ボタン
+$button-bg                    : $rose-pine-overlay;
+$button-bg-insensitive        : $rose-pine-base;
+$button-bg-checked            : $rose-pine-highlight-med;
+$button-bg-checked-insensitive: mix($button-bg-insensitive, $button-bg-checked, 50%);
+$button-bg-active             : $rose-pine-highlight-high;
+$button-flat-bevel-color      : $rose-pine-surface;

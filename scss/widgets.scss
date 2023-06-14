@@ -1,0 +1,62 @@
+@import "palette.scss";
+@import "geometry.scss";
+
+// ラベル, 画像
+label, image {
+    color: $general-fg;
+    caret-color: $general-caret-color;
+    &:backdrop { color: $general-fg-backdrop; }
+    &:disabled { color: $general-fg-disabled; }
+    & > link   { color: $general-fg-link; }
+    & > selection { background : $general-selection-bg; }
+}
+
+// ボタン
+button {
+    background   : $button-bg;
+    border       : solid $general-border-width $general-border-color;
+    border-radius: $general-border-radius;
+    box-shadow   : $general-shadow-geometry $general-shadow-color;
+    &.link > label {
+        color          : $general-fg-link;
+        text-decoration: underline;
+    }
+    &:checked { background: $button-bg-checked; }
+    &:disabled, &:backdrop {
+        background  : $button-bg-insensitive;
+        border-color: $general-border-color-insensitive;
+        box-shadow  : none;
+        // box-shadow  : $general-shadow-geometry $general-shadow-color-insensitive;
+        &:checked { background: $button-bg-checked-insensitive; }
+    }
+    &:active { background: $button-bg-active; }
+
+    padding: $button-padding;
+    &.circular { border-radius: 50%; }
+    & > label:only-child { padding: 0px $button-padding; }
+}
+
+button.flat {
+    background  : transparent;
+    border-color: transparent;
+    box-shadow  : none;
+    &:not(.link) {
+        &:hover {
+            border-color: $general-border-color;
+            box-shadow  : 0px 0px 0px $general-border-width $button-flat-bevel-color inset, $general-shadow-geometry $general-shadow-color,
+        }
+        &:checked {
+            background  : $button-bg-checked;
+            border-color: $general-border-color;
+            box-shadow  : none;
+            &:disabled {
+                background  : $button-bg-checked-insensitive;
+                border-color: $general-border-color-insensitive;
+            }
+        }
+        &:active {
+            background: $button-bg-active;
+            box-shadow: none;
+        }
+    }
+}

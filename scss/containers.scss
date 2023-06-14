@@ -1,0 +1,53 @@
+@import "palette.scss";
+@import "geometry.scss";
+
+// ウィンドウ
+.background {
+    background: $window-bg;
+    &.solid-csd > decoration {
+        border: solid $general-border-width $window-border-color;
+        border-radius: $window-border-radius;
+    }
+}
+
+// メニューバー, ツールバー
+menubar, toolbar {
+    background   : $menubar-toolbar-bg;
+    border-bottom: solid $general-border-width $general-border-color;
+    &:backdrop { background: $menubar-toolbar-bg-backdrop; }
+}
+
+toolbar {
+    @each $orientation, $edge in (horizontal: left, vertical: top) {
+        &.#{$orientation} {
+            padding         : $toolbar-padding;
+            padding-#{$edge}: 0px;
+            & > toolbutton > button {
+                min-width      : $toolbar-button-min-size; 
+                min-height     : $toolbar-button-min-size; 
+                padding        : 0px;
+                margin-#{$edge}: $toolbar-button-margin;
+            }
+        }
+    }
+}
+
+// ボックス, スタックスイッチャー
+box, stackswitcher {
+    @each $orientation in horizontal, vertical {
+        $first : if($orientation == "horizontal", (0: top, 1: bottom, 2: top, 3: bottom), (0: bottom, 1: bottom, 2: top, 3: top));
+        $second: if($orientation == "horizontal", (0: right, 1: right, 2: left, 3: left), (0: left, 1: right, 2: left, 3: right));
+        $edge  : if($orientation == "horizontal", right, bottom);
+        &.#{$orientation}.linked {
+            & > :not(:last-child) {
+                border-#{map-get($first, 0)}-#{map-get($second, 0)}-radius: 0px;
+                border-#{map-get($first, 1)}-#{map-get($second, 1)}-radius: 0px;
+                border-#{$edge}: none;
+            }
+            & > :not(:first-child) {
+                border-#{map-get($first, 2)}-#{map-get($second, 2)}-radius: 0px;
+                border-#{map-get($first, 3)}-#{map-get($second, 3)}-radius: 0px;
+            }
+        }
+    }
+}
